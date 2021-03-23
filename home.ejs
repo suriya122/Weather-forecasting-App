@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+   <meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1">
+    <title>Weather Cast</title>
+    <script src="https://smtpjs.com/v3/smtp.js"></script> 
+    <link rel="icon" type="image/x-icon" href="/images/icons/favicon.ico">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="/css/style.css">
+    <link href="http://fonts.googleapis.com/css?family=Roboto:300,400,700|" rel="stylesheet" type="text/css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather&family=Montserrat:wght@400&family=Raleway&display=swap" rel="stylesheet">
+    <script type="text/javascript"></script>
+    
+    
+    <script src = "https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity = "sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin = "anonymous" ></script>
+      <script src = "https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity = "sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin = "anonymous" ></script>
+
+      <script src = "https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity = "sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin = "anonymous" ></script>
+
+
+    <script src = "https://kit.fontawesome.com/c901e8b6ac.js"
+  crossorigin = "anonymous" ></script>
+    
+  </head>
+  <body>
+     
+    
+   <div style=" margin-right: 5%;">
+      <nav style="float:right;" class="navbar">
+         <a class="navi navbar-brand" href="#">
+           <img src="./images/logo4.png"  class="d-inline-block align-top" alt="">
+         
+         </a>
+       </nav>
+
+   </div>
+   <section id=menusec>
+     
+     
+      <div class="base">
+         <div class="menu">
+            <div class="icon">
+               <div class="bar"></div>
+            </div>
+         </div>
+         <div class="icons">
+            <i class="fa fa-user" aria-hidden="true"></i>
+            <i class="fa fa-calendar-o" aria-hidden="true"></i>
+            <i class="fa fa-tachometer" aria-hidden="true"></i>
+         </div>
+         <div class="section">
+            <div class="cover1">
+               <div class="cover2">
+                  <a class="content" href="#APOD"></a>
+               </div>
+            </div>
+         </div>
+         <a class="section-static top" href="#findsec"></a>
+         <a class="section-static bottom" href="#moreadop"></a>
+      </div>
+   </section>
+   
+   
+
+<section id=findsec>
+   
+   <div class="hero" data-bg-image="images/banner.jpg" style="   background-image: url('images/banner1.jpg');">
+    
+      
+      
+      <div class="container">
+         <div class="formsize " style="border-color: aliceblue;">
+            <form action="/" method="post" class="find-location">
+               <input type="text" name="place" placeholder="Enter your Location..." autocomplete="off">
+               <input type="submit" name="button" value="find">
+            </form>
+         </div>
+         
+        
+    
+
+      </div>
+   </div>
+   <div class="forecast-table">
+      <div class="container">
+         <div class="forecast-container">
+            <% var dy=nd%>
+            <% var arr=[0,1,2,3,4,5,6]; %>
+            <%arr.forEach((item,i)=>{ %>
+               <%  if(item===dy){ %>
+                  <div class="today forecast">
+                     <div class="forecast-header">
+                        <div class="day"><%=d%></div>
+                        <div class="date"><%=da+" "%><%=m%></div>
+                     </div> <!-- .forecast-header -->
+                     <div class="forecast-content">
+                        <div class="location"><%=place%><span style="float: right;"><%=des%></span></div>
+                        <div class="degree">
+                           <div class="num"><%=temp%><sup>o</sup>C</div>
+                           <div class="forecast-icon" >
+                              <img  src="<%=imgs%>" alt="" width=90>
+                           </div>
+                        </div>
+                        <span><img src="images/icon-umberella.png" alt=""><%=hum+'%'%></span>
+                        <span><img src="images/icon-wind.png" alt=""><%=Math.floor(windspeed*1.6)+' '+'km/hr'%></span>
+                        <span><img src="images/icon-compass.png" alt=""><%=climate%></span>
+                     </div>
+                  </div>
+
+
+                  <% }else{%>
+                     <div class="forecast">
+                        <div class="forecast-header">
+                           <% var ar=[1,3,5,7,12,13,14]; %>
+                           <% var rurl=" images/icons/icon-"+ar[item]+".svg" %>
+
+                           <div class="day"><%=dayss[item]%></div>
+                        </div> <!-- .forecast-header -->
+                        <div class="forecast-content">
+                           <div class="forecast-icon">
+                              <img src="<%= rurl %>" alt="" width=48>
+                           </div>
+                           <div class="degree">23<sup>o</sup>C</div>
+                           <small>18<sup>o</sup></small>
+                        </div>
+                     </div>
+
+
+                     <%  } %>
+
+               <% });  %>
+
+
+
+           
+               
+               
+                 
+
+
+
+                  
+            
+            
+            
+           
+         </div>
+      </div>
+   </div>
+
+</section>
+
+<section id="APOD">
+     <div ><h1 class="apodh1">NASA Picture of the Day</h1>
+      <p style="font-family: Raleway;font-weight: 600;font-size: 1.2em;">Learn about the Astronomy Picture of the Day. Read what picture says daily?</p>
+   </div>
+
+
+   <div class="row">
+      <div class="apod-col col-lg-6">
+         <img width=100% height=90% src="<%=apodhurl%>" alt="<%=apodurl%>">
+      </div>
+      <div class="apod-col col-lg-6">
+         <h2 class="apodh1"><%=apodtitle%></h2><span style="color: #f7d9d9;font-weight: 600;"><%="("+date+")"%></span>
+         <p class="apod-p"><%=apoddesc%></p></div>
+   </div>
+</section>
+
+
+<section id="moreadop" style="padding-top: 0%;">
+   <div>
+   <h1 class="apodh1" style="color: rgb(41, 199, 125);">Know more about APOD</h1>
+   <p style="font-family: Raleway;font-weight: 600;font-size: 1.2em;">The abbrevation of APOD is Astronomy Picture of the Day. Click know more to learn about the space pictures</p>
+   </div>
+
+<div class="row">
+<% oarr.forEach((item)=>{%>
+   <div class="col-lg-4 imgsize"><img width=100% height=80%  src="<%=item.hdurl%>" alt="Loading..."></div>
+   <%});%>
+  
+</div>
+
+<a style="border-radius: 15px;"class="btn btn-outline-primary" href="/know-more-apod">Know more APOD...</a>
+
+ </section>
+
+ 
+ 
+ 
+ <footer class="site-footer">
+   <div class="container">
+      <div class="row">
+         <div class="col-md-8">
+            <form method="post" class="subscribe-form">
+               <input class="emm" name="email"type="text" placeholder="Enter your email to subscribe...">
+               <input type="submit"onclick="sendEmail()"value="Send Email">
+            </form>
+            <p class="colophon">Copyright 2020. All rights reserved by Suriyaa V</p>
+         </div>
+         <div class="col-md-3 col-md-offset-1">
+            <div class="social-links">
+               <a href="#"><i class="fa fa-facebook"></i></a>
+               <a href="#"><i class="fa fa-twitter"></i></a>
+               <a href="#"><i class="fa fa-google-plus"></i></a>
+               <a href="#"><i class="fa fa-pinterest"></i></a>
+            </div>
+         </div>
+      </div>
+
+     
+   </div>
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+    <script src="js/indexi.js" charset="utf-8"></script>
+  </body>
+</html>

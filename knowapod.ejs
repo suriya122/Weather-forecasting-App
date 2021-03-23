@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+   <meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1">
+    <title>Weather Cast</title>
+    <script src="https://smtpjs.com/v3/smtp.js"></script> 
+    <link rel="icon" type="image/x-icon" href="/images/icons/favicon.ico">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="/css/style.css">
+    <link href="http://fonts.googleapis.com/css?family=Roboto:300,400,700|" rel="stylesheet" type="text/css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather&family=Montserrat:wght@400&family=Raleway&display=swap" rel="stylesheet">
+    <script type="text/javascript"></script>
+    
+    
+    <script src = "https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity = "sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin = "anonymous" ></script>
+      <script src = "https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity = "sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin = "anonymous" ></script>
+
+      <script src = "https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity = "sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin = "anonymous" ></script>
+
+
+    <script src = "https://kit.fontawesome.com/c901e8b6ac.js"
+  crossorigin = "anonymous" ></script>
+    
+  </head>
+  <body>
+     
+    
+   <div style=" margin-right: 5%;">
+      <nav style="float:right;" class="navbar">
+         <a class="navi navbar-brand" href="#">
+           <img src="./images/logo4.png"  class="d-inline-block align-top" alt="">
+         
+         </a>
+       </nav>
+
+   </div>
+   <section id=menusec>
+     
+     
+      <div class="base">
+         <div class="menu">
+            <div class="icon">
+               <div class="bar"></div>
+            </div>
+         </div>
+         <div class="icons">
+            <i class="fa fa-user" aria-hidden="true"></i>
+            <i class="fa fa-calendar-o" aria-hidden="true"></i>
+            <i class="fa fa-tachometer" aria-hidden="true"></i>
+         </div>
+         <div class="section">
+            <div class="cover1">
+               <div class="cover2">
+                  <a class="content" href="/#APOD"></a>
+               </div>
+            </div>
+         </div>
+         <a class="section-static top" href="/#findsec"></a>
+         <a class="section-static bottom" href="/#moreadop"></a>
+      </div>
+   </section>
+   
+   <section style="padding-top:7%;"     id="APODi">
+    <div ><div style="text-align: center;"><h1 class="apodh1">APOD GALLERY</h1></div>
+     <p style="font-family: Raleway;font-weight: 600;font-size: 1.2em;">Excited ! What for waiting start Learning about the Astronomy Picture of the Day.?</p>
+  </div>
+
+
+  <div class="row">
+
+   <% oarry.forEach(item=>{ %>
+        <div class="apod-col col-lg-6">
+            <img width=100% height=90% src="<%=item.hdurl%>" alt="lOADING...">
+         </div>
+         <div class="apod-col col-lg-6">
+            <h2 class="apodh1"><%=item.title%></h2><span style="color: #f7d9d9;font-weight: 600;line-height: 1;"><%="("+item.date+")"%></span>
+            <p class="apod-p"><%=item.explanation%></p>
+      </div>
+
+      <% });%>
+    </div>
+    
+</section>
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   <footer class="site-footer">
+    <div class="container">
+       <div class="row">
+          <div class="col-md-8">
+             <form method="post" class="subscribe-form">
+                <input class="emm" name="email"type="text" placeholder="Enter your email to subscribe...">
+                <input type="submit"onclick="sendEmail()"value="Send Email">
+             </form>
+             <p class="colophon">Copyright 2020. All rights reserved by Suriyaa V</p>
+          </div>
+          <div class="col-md-3 col-md-offset-1">
+             <div class="social-links">
+                <a href="#"><i class="fa fa-facebook"></i></a>
+                <a href="#"><i class="fa fa-twitter"></i></a>
+                <a href="#"><i class="fa fa-google-plus"></i></a>
+                <a href="#"><i class="fa fa-pinterest"></i></a>
+             </div>
+          </div>
+       </div>
+ 
+       
+    </div>
+ </footer>
+   
+   
+   <script src="js/indexi.js" charset="utf-8"></script>
+  </body>
+</html>
