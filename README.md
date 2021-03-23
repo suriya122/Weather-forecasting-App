@@ -1,5 +1,5 @@
 # Weather-forecasting-App
-This is website for forecasting weather and to learn about Nasa ASTRONOMY PICTURES OF THE DAY, daily updates.
+This  webapplication for forecasting live weather and to learn about Nasa ASTRONOMY PICTURES OF THE DAY, daily updates.
 
 FEEL FREE TO USE THIS APPLICAITON
 
